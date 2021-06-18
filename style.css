@@ -1,0 +1,761 @@
+body{
+    margin: 0;
+   overflow: hidden;
+}
+
+#building-platform{
+    display: none;
+    visibility: hidden;
+}
+
+/* LANDING PAGE */
+
+#landing-page{
+    display: flex;
+    justify-content: center;
+    background-image: url("img/wallpaper_inicio.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#landing-page-buttons-section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 200px;
+    height: 164px;
+    margin-top: 35vh;
+}
+
+.landing-page-button{
+    font-family: "Oswald";
+    color: #ffffff;
+    font-size: 40px;
+    background-color: #FCA352;
+    border: 1px solid #FA9334;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 10px 50px;
+    margin: 1vw;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.landing-page-button:hover, .stage-modal-button:hover, .building-modal-button:hover{
+    background-color: #fc891d;
+}
+
+#all-tutorial{
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    bottom: 100vh;
+}
+
+#all-tutorial button{
+    justify-self: end;
+    margin: 0;
+}
+
+#all-tutorial video{
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+#read-tutorial{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 10px;
+    margin: 0.5vw;
+    width: 10vw;
+    height: 50vh;
+    background-image: linear-gradient(#863D14,hsl(22, 74%, 40%));
+    text-align: center;
+    font-family: "Love Ya Like A Sister";
+    color: #ffffff;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+#read-tutorial ::-webkit-scrollbar {
+    width: 10px;
+}
+
+#read-tutorial ::-webkit-scrollbar-track {
+    background: #863D14;
+    border-radius: 5px 5px 5px 5px; 
+}
+
+#read-tutorial ::-webkit-scrollbar-thumb {
+    background: #608E24;
+    border-radius: 5px 5px 5px 5px; 
+}
+
+#read-tutorial ::-webkit-scrollbar-thumb:hover {
+    background: #2F772E;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#align-read-and-button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* MAP PAGE */
+
+#stages{
+    background-image: url("img/tela_fases.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+#return-button{
+    float: right;
+    padding: 71vh 5vw 0 0;
+}
+
+#stages-map-return-icon{
+    cursor: pointer;
+}
+
+#stages-map{
+    margin: 20vh 0 0 30vw;
+}
+
+.stage-button{
+    cursor: pointer;
+}
+
+/* STAGE SELECT MODAL */
+
+.start-stage-modal, .building-modal{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 35vw;
+    top: 25vh;
+    left: 32.5vw;
+    background-image: linear-gradient(#3e9a3c,#2F772E);
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.start-stage-modal img, .building-modal img{
+    margin-top: 1vh;
+}
+
+.stage-description{
+    font-family: "Oswald";
+    color: #ffffff;
+    text-align: center;
+    font-size: 40px;
+    padding-top: 2vh;
+}
+
+.stage-modal-button, .building-modal-button{
+    font-family: "Oswald";
+    color: #ffffff;
+    font-size: 30px;
+    margin: 0 0 2vh 0;
+    background-color: #FCA352;
+    border: 1px solid #FA9334;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 10px 30px;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* STAGE */
+.stage{
+    display: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.categories-section{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 50vh;
+    margin: 0 0 1vh 0;
+}
+
+.drop-area{
+    margin-top: 1vh;
+}
+
+
+#snow-habitat, #domestic-habitat, #jungle-habitat, #vegetable-food, #fruit-food, #candy-food, #addition-math, #subtraction-math, #multiplication-math{
+    width: 30vw;
+}
+
+.animal-in-category, .food-in-category{
+  visibility: hidden;
+}
+
+#penguin-snow-habitat{
+    z-index: 20;
+    width: 3vw;
+    position: relative;
+    left: 8vw;
+    bottom: 25vh;
+}
+
+#polar_bear-snow-habitat{
+    z-index: 20;
+    width: 7vw;
+    position: relative;
+    left: 11vw;
+    bottom: 28vh;
+}
+
+#snow_owl-snow-habitat{
+    z-index: 20;
+    width: 3vw;
+    position: relative;
+    right: 5vw;
+    bottom: 47vh;
+}
+
+#snow_weasel-snow-habitat{
+    z-index: 20;
+    width: 2.5vw;
+    position: relative;
+    right: 2vw;
+    bottom: 23.5vh;
+}
+
+#cat-domestic-habitat{
+    z-index: 21;
+    width: 5vw;
+    position: relative;
+    left: 5vw;
+    bottom: 25vh;
+}
+
+#dog-domestic-habitat{
+    z-index: 21;
+    width: 9vw;
+    position: relative;
+    left: 6vw;
+    bottom: 18vh;
+}
+
+#fish-domestic-habitat{
+    z-index: 21;
+    width: 4vw;
+    position: relative;
+    right: 1vw;
+    bottom: 42vh;
+}
+
+#turtle-domestic-habitat{
+    z-index: 21;
+    width: 5vw;
+    position: relative;
+    left: 1vw;
+    bottom: 25vh;
+}
+
+#koala-jungle-habitat{
+    z-index: 21;
+    width: 5vw;
+    position: relative;
+    left: 16vw;
+    bottom: 49vh;
+}
+
+#lemur-jungle-habitat{
+    z-index: 21;
+    width: 5vw;
+    position: relative;
+    left: 0.7vw;
+    bottom: 35vh;
+}
+
+#panda-jungle-habitat{
+    z-index: 21;
+    width: 6vw;
+    position: relative;
+    bottom: 19vh;
+    right: 4vw;
+}
+
+#red_panda-jungle-habitat{
+    z-index: 21;
+    width: 5vw;
+    position: relative;
+    left: 1.5vw;
+    bottom: 25vh;
+}
+
+#cabbage-vegetable-habitat{
+    z-index: 21;
+    width: 3vw;
+    position: relative;
+    left: 7.5vw;
+    bottom: 25vh;
+}
+
+#chard-vegetable-habitat{
+    z-index: 21;
+    width: 3vw;
+    position: relative;
+    left: 7.5vw;
+    bottom: 16vh;
+}
+
+#spinach-vegetable-habitat{
+    z-index: 21;
+    width: 4vw;
+    position: relative;
+    left: 8.5vw;
+    bottom: 15vh;
+}
+
+#cress-vegetable-habitat{
+    z-index: 21;
+    width: 3vw;
+    position: relative;
+    left: 7.5vw;
+    bottom: 25vh;
+}
+
+#apple-fruit-habitat{
+    z-index: 21;
+    width: 2.5vw;
+    position: relative;
+    left: 8.5vw;
+    bottom: 20vh;
+}
+
+#kiwi-fruit-habitat{
+    z-index: 21;
+    width: 3vw;
+    position: relative;
+    left: 7.5vw;
+    bottom: 16vh;
+}
+
+#orange-fruit-habitat{
+    z-index: 21;
+    width: 2.5vw;
+    position: relative;
+    left: 8.5vw;
+    bottom: 15vh;
+}
+
+#pear-fruit-habitat{
+    z-index: 21;
+    width: 3vw;
+    position: relative;
+    left: 7.5vw;
+    bottom: 20vh;
+}
+
+#candy_cane-candy-habitat{
+    z-index: 21;
+    width: 1.5vw;
+    position: relative;
+    left: 8.5vw;
+    bottom: 20vh;
+}
+
+#gum-candy-habitat{
+    z-index: 21;
+    width: 3vw;
+    position: relative;
+    left: 6.5vw;
+    bottom: 13vh;
+}
+
+#ice_cream-candy-habitat{
+    z-index: 21;
+    width: 2.5vw;
+    position: relative;
+    left: 8.5vw;
+    bottom: 20vh;
+}
+
+#jelly_beans-candy-habitat{
+    z-index: 21;
+    width: 3vw;
+    position: relative;
+    left: 7.5vw;
+    bottom: 14vh;
+}
+
+#eleven-addition-habitat{
+    z-index: 21;
+    width: 5vw;
+    position: relative;
+    left: 7.5vw;
+    bottom: 26vh;
+}
+
+#twenty-addition-habitat{
+    z-index: 21;
+    width: 6vw;
+    position: relative;
+    left: 1.5vw;
+    bottom: 22vh;
+}
+
+#two-addition-habitat{
+    z-index: 21;
+    width: 5vw;
+    position: relative;
+    right: 16;
+    bottom: 18vh;
+}
+
+#fifteen-addition-habitat{
+    z-index: 21;
+    width: 6vw;
+    position: relative;
+    right: 10vw;
+    bottom: 13vh;
+}
+
+#ten-subtraction-habitat{
+    z-index: 21;
+    width: 5vw;
+    position: relative;
+    left: 7.5vw;
+    bottom: 26vh;
+}
+
+#six-subtraction-habitat{
+    z-index: 21;
+    width: 6vw;
+    position: relative;
+    left: 1.5vw;
+    bottom: 22vh;
+}
+
+#seven-subtraction-habitat{
+    z-index: 21;
+    width: 5vw;
+    position: relative;
+    right: 16;
+    bottom: 18vh;
+}
+
+#four-subtraction-habitat{
+    z-index: 21;
+    width: 6vw;
+    position: relative;
+    right: 10vw;
+    bottom: 13vh;
+}
+
+#eight-multiplication-habitat{
+    z-index: 21;
+    width: 5vw;
+    position: relative;
+    left: 7.5vw;
+    bottom: 26vh;
+}
+
+#nine-multiplication-habitat{
+    z-index: 21;
+    width: 6vw;
+    position: relative;
+    left: 1.5vw;
+    bottom: 22vh;
+}
+
+#forty-multiplication-habitat{
+    z-index: 21;
+    width: 6vw;
+    position: relative;
+    right: 16;
+    bottom: 18vh;
+}
+
+#one-multiplication-habitat{
+    z-index: 21;
+    width: 6vw;
+    position: relative;
+    right: 10vw;
+    bottom: 13vh;
+}
+
+.cards-section{
+    width: 100%;
+    height: 30vh;
+    margin-top: 7vh;
+}
+
+.coin-stage, .points-stage{
+    margin-left: 1vw;
+    width: 150px;
+    position: relative;
+    bottom: 13vh;
+}
+
+.quit-stage{
+    margin-right: 1vw;
+    position: relative;
+    bottom: 23vh;
+    float: right;
+}
+
+.quit-stage img{
+    cursor: pointer;
+}
+
+.modal-quit-stage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    left: 33vw;
+    bottom: 75vh;
+    z-index: 31;
+    width: 31vw;
+    background-image: linear-gradient(#3e9a3c,#2F772E);
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.modal-quit-stage p{
+    color: white;
+    font-size: 40px;
+    font-family: "Oswald";
+    text-align: center;
+}
+
+#modal-complete-stage-animals, #modal-complete-stage-food, #modal-complete-stage-math{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 33;
+    position: relative;
+    width: 35vw;
+    bottom: 85vh;
+    left: 30vw;
+    background-image: linear-gradient(#3e9a3c,#2F772E);
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 35px;
+    color: rgb(255, 255, 255);
+    font-family: "Oswald";
+}
+
+#modal-complete-stage img, #modal-complete-stage-food img, #modal-complete-stage-math img{
+    margin-top: 1vh;
+    margin-right: 1.5vw;
+}
+
+/* STORE */
+
+#store{
+    background-image: linear-gradient(#FFEBDB, #FFDBBF);
+    width: 100%;
+    height: 100%;
+}
+
+#icons-button, #store-icons-button{
+    padding: 2vh 0 0 3vw;
+}
+
+#icons-button span, #store-icons-button span, .coin-stage span, .points-stage span{
+    font-family: "Love Ya Like A Sister";
+    position: relative;
+    bottom: 2vh;
+    font-size: 30px;
+    color: #535353;
+}
+
+.coin-stage span{
+    bottom: 5.1vh;
+}
+
+#store-icons-button span{
+    bottom: 5vh;
+}
+.coin{
+    margin-bottom: 3vh;
+}
+
+#coin-icon{
+    padding: 1vh 0 0 4vw;
+}
+
+#store-icon, #store-return-icon{
+    cursor: pointer;
+}
+
+#store-items-section{
+    display: inline-block;
+    flex-direction: row;
+    margin: 1vh 7vw;
+    width: 85vw;
+    height: 50vh;
+    background-color: #863D14;
+    border-radius: 10px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.store-card{
+    display: inline-block;
+    margin: 0.7vw;
+    width: 15vw;
+    height: 42vh;
+    background-color: #2F772E;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #863D14;
+    border-radius: 0 5px 5px 0; 
+}
+
+::-webkit-scrollbar-thumb {
+    background: #608E24;
+    border-radius: 5px 5px 5px 5px; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2F772E;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#store-category-section{
+    margin: 3vh 7vw;
+    width: 85vw;
+    height: 25vh;
+    background-color: #863D14;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+
+/* LINE  WITH CARDS*/
+
+#cards-section-line-1, #cards-section-line-2{
+    display: flex;
+    flex-direction: line;
+    justify-content: center;
+}
+
+/* CARDS */
+
+.card{
+  cursor: pointer;
+  font-family: "Love Ya Like A Sister";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  width: 90px;
+  transform-style: preserve-3d;
+  perspective: 600px;
+  transition: .5s;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.card:hover .card-front{
+  transform: rotateY(-180deg);
+}
+.card:hover .card-back{
+  transform: rotateY(0deg);
+}
+
+.card-back, .card-front{
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  border-radius: inherit;
+  width: inherit; 
+  height: inherit;
+  position: absolute;
+  background-color: #dac29f;
+  transition: inherit;
+  box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card-front{
+ transform: rotateX(0deg);
+}
+
+.card-back{
+  transform: rotateY(180deg);
+}
+
+img.image{
+  width: 80px;
+  height: 80px;
+}
+
+.data{
+  text-align: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.card-name{
+  font-weight: 800;
+  text-transform: capitalize;
+}
+
+.card-sub{
+  font-size: 60%;
+}
+
+/* MONITORES MENORES */
+
+@media (max-width: 1660px) {
+    #stages-map{
+        margin: 20vh 0 0 20vw;
+    }
+    .start-stage-modal, .building-modal{
+        top: 15vh;
+    }
+    #modal-complete-stage, #modal-complete-stage-food, #modal-complete-stage-math{
+        bottom: 90vh;
+    }
+    .modal-quit-stage{
+        bottom: 90vh;
+    }
+    .coin-stage, .points-stage{
+        bottom: 7vh;
+    }
+}
+@media (max-width: 1100px) {
+    #landing-page, #stages, #store, #all-tutorial{
+        display: none;
+    }
+    #building-platform{
+        display: flex;
+        visibility: visible;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(#FFEBDB, #FFDBBF);
+    }
+}

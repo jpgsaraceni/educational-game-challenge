@@ -1,0 +1,571 @@
+<!DOCTYPE html />
+
+<html lang="pt-BR">
+
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" />
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+	<link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
+
+	<title>Certeza?</title>
+
+</head>
+
+<body>
+
+	<div id="building-platform">
+		<div>
+			<img src="img/building.svg" />
+        </div>
+        <div>
+            <p class="stage-description">Opa, essa sessão está em obras!</p>
+        </div>
+    </div>
+
+    <div id="landing-page">
+        <div id="landing-page-buttons-section">
+            <button class="landing-page-button" id="start-game-button">JOGAR</button>
+            <button class="landing-page-button" id="help-button">AJUDA</button>
+        </div>
+    </div>
+
+
+    <div id="all-tutorial">
+        <video width="800" controls>
+            <source src="video/tutorial.mp4" type="video/mp4">
+        </video>
+        <div id="align-read-and-button">
+            <div id="read-tutorial">
+                <h2>Como iniciar?</h2>
+                <p>Clique em jogar para abrir o mapa. Após o carregamento, clique em alguma ilha
+                    desbloqueada, e jogar para iniciar a fase.</p>
+                <h2>Como jogar?</h2>
+                <p>Ao entrar na fase, você verá na tela três quadros e doze cartas. O objetivo é arrastar cada carta para o
+                    quadro correspondente. Ao arrastar todas corretamente, você vence a fase!</p>
+                <h2>Como ganhar moedas?</h2>
+                <p>Jogando partidas! No canto inferior esquerdo está um diamante de pontuação.
+                    Para cada carta arrastada para o quadro certo, você ganha 10 pontos :) e cada erro você perde 5 pontos :( Ao final da fase, cada 10 pontos são convertidos em 1 moeda.</p>
+                <h2>Para que servem as moedas?</h2>
+                <p>Quando a obra da nossa loja terminar, você vai poder comprar 
+                    avatares para seu perfil, cards personalizados, novas fases e dicas. Em breve!</p>
+                
+            </div>
+            <button class="building-modal-button" id="back-video-help">VOLTAR</button>
+        </div>
+    </div>
+
+
+    <div id="stages">
+
+        <div id="icons-button">
+            <img src="img/store_icon.svg" id="store-icon" />
+            <img src="img/coin.svg" id="coin-icon" />
+            <span class="input-coin-value"></span>
+        </div>
+
+        <div class="building-modal" id="building-store">
+            <div>
+                <img src="img/building.svg" />
+            </div>
+            <div>
+                <p class="stage-description">Opa, essa sessão está em obras!</p>
+            </div>
+            <div>
+                <button class="building-modal-button">CERTEZA</button>
+            </div>
+        </div>
+
+        <div id="return-button">
+            <img src="img/voltar.svg" id="stages-map-return-icon" />
+        </div>
+
+        <!-- SVG MAP -->
+
+        <svg id="stages-map" width="673" height="396" viewBox="0 0 673 396" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+
+            <circle cx="412.079" cy="32.343" r="26.343" fill="#333333" />
+            <circle cx="411.343" cy="155.343" r="26.343" fill="#333333" />
+            <circle cx="412.079" cy="278.211" r="26.343" fill="#333333" />
+            <circle cx="568.343" cy="369.343" r="26.343" fill="#333333" />
+            <circle cx="646.657" cy="278.211" r="26.343" fill="#333333" />
+
+            <!-- WESEL -->
+            <a class="stage-button" id="animals-stage-button" stage="animals">
+                <circle cx="26.343" cy="32.343" r="26.343" fill="#608E24" />
+                <path
+                    d="M24.2366 4.23223C25.4943 -0.798736 29.4772 1.61193 31.3114 3.44614L35.0452 3.64269C35.1108 3.57719 35.5955 3.13174 37.0105 1.87399C40.9409 -0.877314 40.9409 4.23226 40.9409 5.21487C41.9235 6.98357 41.1374 7.96618 40.3513 8.55574C40.9802 10.4424 40.0893 12.3552 39.5653 13.0757C38.1241 15.696 35.0845 21.2511 34.4557 22.5088C35.4383 23.8845 34.8487 29.1906 34.6522 29.7801C34.9666 29.9373 35.5693 31.9419 35.8313 32.9245C35.7658 33.7761 35.6348 36.1474 35.6348 38.8201C34.6915 42.9078 33.4076 44.3227 32.8835 44.5193C32.818 46.288 32.687 50.2577 32.687 51.9871C32.2153 53.7165 32.4905 58.8654 32.687 61.2236L15.393 59.0619L15.7861 53.3628C15.9171 49.4978 16.1791 41.0605 16.1791 38.2306C16.1791 36.1867 15.393 33.3175 15 32.1384C15.393 31.1558 16.3757 28.7975 17.1617 27.2253C18.5374 25.2601 19.3235 24.081 19.9131 22.1158C20.8957 18.1853 21.8783 17.9888 22.0748 17.3992C22.4678 17.2027 23.2539 12.0931 23.8435 10.7175C23.4504 8.75226 23.647 8.94879 24.0401 7.76965C23.0574 6.78705 23.4505 5.80443 24.2366 4.23223Z"
+                    fill="white" />
+                <path
+                    d="M29.7391 13.8618C35.8313 17.3992 37.4035 15.041 39.3687 13.2723C39.4378 13.2101 39.5033 13.1472 39.5653 13.0836M29.1496 15.6305C25.7519 14.144 24.362 12.1412 23.8952 10.521M39.5653 13.0836C41.266 11.3399 40.3513 9.12457 40.3513 8.55573C42.3165 7.57312 40.7444 5.21486 40.9409 4.82182C41.1374 4.42877 40.9409 1.67747 39.3687 1.0879C37.7965 0.498334 35.6348 3.05312 35.2417 3.44616C34.9273 3.7606 32.4904 3.57718 31.3113 3.44616C29.5426 1.61196 25.6515 -0.798714 24.2365 4.23225C23.8435 4.82182 23.0574 6.39399 24.04 7.76965C23.769 8.04068 23.4979 9.14234 23.8952 10.521M39.5653 13.0836C38.2432 15.5788 35.8452 20.0269 34.4557 22.3771M33.4731 23.8845C33.6319 23.7256 33.9862 23.1711 34.4557 22.3771M34.4557 22.3771C34.9017 23.8852 35.5212 27.418 34.5422 29.7801M33.2765 40.5888C33.1271 41.6352 32.409 42.3405 31.9009 42.2722M31.9009 42.2722C31.741 42.2507 31.6019 42.1526 31.5078 41.9645C30.1322 38.034 33.08 32.9245 34.4557 29.9766C34.4858 29.9121 34.5146 29.8466 34.5422 29.7801M31.9009 42.2722C32.0127 42.8474 32.2771 43.5335 32.687 43.5261M33.8661 41.9645C33.3917 43.1167 32.9976 43.5206 32.687 43.5261M32.687 43.5261C32.7201 43.8579 32.7941 44.1632 32.9193 44.3227M34.5422 29.7801C35.0374 30.3697 35.9886 31.9419 35.8313 33.514C35.6348 35.4792 35.6348 36.6584 35.6348 38.8201C34.1072 43.9905 33.2896 44.7948 32.9193 44.3227M32.9193 44.3227C32.6453 49.5633 32.2153 60.2803 32.687 61.2236C31.5865 61.0664 20.6991 59.717 15.393 59.0619C16.0481 51.1355 16.8866 34.6539 15 32.1384C15 31.1558 18.5374 24.6705 19.127 24.2775C19.7165 23.8845 20.6991 18.3818 21.6817 17.9888C22.6644 17.5957 23.3573 10.7175 23.8952 10.521"
+                    stroke="#C2E2F0" />
+                <path d="M35.2418 12.8791C35.3728 12.7481 35.5955 12.4075 35.4383 12.093" stroke="#957975"
+                    stroke-width="0.5" />
+                <path
+                    d="M34.8487 9.93145C33.9054 10.0887 33.9316 10.9141 34.0626 11.3071C35.4382 12.6828 35.8314 12.2897 36.6174 11.3071C37.4035 10.3245 36.0278 9.73493 34.8487 9.93145Z"
+                    fill="#6F372A" />
+                <path d="M33.6696 13.5135C34.3247 12.9239 35.7134 12.2164 36.0279 14.103" stroke="#957975"
+                    stroke-width="0.5" />
+                <path
+                    d="M30.9183 9.14541C31.5472 8.83098 31.5734 8.49035 31.5079 8.35934C30.8658 7.39619 30.3087 7.28897 29.9357 7.44267C28.5601 10.0634 30.1322 9.53846 30.9183 9.14541Z"
+                    fill="#282828" />
+                <path
+                    d="M29.5427 7.76977C29.6264 7.64427 29.7608 7.51476 29.9357 7.44267M29.9357 7.44267C30.3087 7.28897 30.8658 7.39619 31.5079 8.35934C31.5734 8.49035 31.5472 8.83098 30.9183 9.14541C30.1322 9.53846 28.5601 10.0634 29.9357 7.44267Z"
+                    stroke="#282828" stroke-width="0.5" />
+                <path
+                    d="M37.6579 9.03512C37.1961 8.73886 37.1769 8.41792 37.225 8.29449C37.6965 7.38701 38.1056 7.28599 38.3795 7.4308C39.3897 9.90005 38.2352 9.40545 37.6579 9.03512Z"
+                    fill="#282828" />
+                <path
+                    d="M38.6681 7.739C38.6067 7.62075 38.5079 7.49873 38.3795 7.4308M38.3795 7.4308C38.1056 7.28599 37.6965 7.38701 37.225 8.29449C37.1769 8.41792 37.1961 8.73886 37.6579 9.03512C38.2352 9.40545 39.3897 9.90005 38.3795 7.4308Z"
+                    stroke="#282828" stroke-width="0.5" />
+                <circle cx="30.7218" cy="7.96605" r="0.196522" fill="white" />
+                <circle cx="38.1896" cy="7.96605" r="0.196522" fill="white" />
+                <path
+                    d="M25.2191 33.907C26.0707 36.1997 27.5774 41.6106 26.7913 44.9122C26.5948 45.1087 26.3491 45.207 26.0789 44.9122M25.2191 42.554C25.5139 43.9296 25.8087 44.6174 26.0789 44.9122M26.0789 44.9122C25.7396 45.3174 25.1452 45.7326 24.6296 45.3952M23.8435 43.7331C24.0234 44.6927 24.3115 45.1871 24.6296 45.3952M24.6296 45.3952C24.04 46.5443 22.2713 46.7988 19.913 38.6235"
+                    stroke="#C2E2F0" />
+                <path d="M7.5 57.5C11 54.8333 19 52.5 27 62.5C9 62 16.5 54.5001 7.5 57.5Z" fill="white" />
+                <path d="M45 55.5C41.5 52.8333 32 50.021 24 60.021C40.5 67.4998 36 52.5001 45 55.5Z" fill="white" />
+                <path
+                    d="M7 57.4998C10.0511 55.3641 17.4868 53.1166 24.5524 59.4999M26.5 61.4998C25.8565 60.7547 25.206 60.0904 24.5524 59.4999M24.5524 59.4999C26.1869 57.4904 29.408 54.7702 33.5 53.5776C36.8747 52.5941 40.8419 52.6496 45 54.9999"
+                    stroke="#C2E2F0" />
+            </a>
+            <!-- END WEASEL -->
+
+            <!-- CANDY -->
+            <a class="stage-button" id="food-stage-button" stage="food">
+                <circle cx="103.49" cy="154.022" r="26.343" fill="#36B678" />
+                <path
+                    d="M104.765 132.792L99.2105 129.585C101.006 126.474 106.687 121.459 115.041 126.282C123.395 131.105 121.151 138.105 118.985 141.002L95.1251 182.329L90.6814 179.763L114.541 138.436C115.778 136.978 117.097 133.394 112.475 130.726C107.854 128.058 105.41 130.991 104.765 132.792Z"
+                    fill="white" stroke="white" />
+                <path d="M97.2715 179.124L90.3309 179.857L93.6661 174.08L100.094 174.236L97.2715 179.124Z"
+                    fill="#AF2222" />
+                <path d="M102.916 169.348L95.9752 170.081L99.3105 164.304L105.738 164.46L102.916 169.348Z"
+                    fill="#AF2222" />
+                <path d="M108.56 159.572L101.62 160.304L104.988 154.471L111.382 154.683L108.56 159.572Z"
+                    fill="#AF2222" />
+                <path d="M114.204 149.795L107.264 150.528L110.599 144.751L117.027 144.907L114.204 149.795Z"
+                    fill="#AF2222" />
+                <path
+                    d="M119.207 141.13C117.712 141.155 112.908 140.752 112.908 140.752L114.832 137.419C115.636 135.514 115.355 134.462 115.355 134.462C115.355 134.462 120.286 134.643 121.21 134.584C121.397 135.285 121.402 136.396 121.149 137.511C120.49 138.908 120.199 139.925 119.207 141.13Z"
+                    fill="#AF2222" />
+                <path
+                    d="M116.058 126.573C115.84 128.053 114.656 132.915 114.656 132.915C112.92 130.982 111.365 130.084 108.501 129.912C108.501 129.912 109.677 125.047 109.768 124.126C112.059 124.264 114.725 125.803 116.058 126.573Z"
+                    fill="#AF2222" />
+                <path
+                    d="M105.885 131.365L102.665 125.654C100.656 126.568 99.1594 129.16 98.8601 129.679L105.081 133.271C105.116 132.698 105.555 131.767 105.885 131.365Z"
+                    fill="#AF2222" />
+            </a>
+            <!-- END CANDY -->
+
+            <!-- MATH -->
+            <a class="stage-button" id="math-stage-button" stage="math">
+                <circle cx="255.276" cy="93.8098" r="26.343" fill="#6CC26F" />
+                <path
+                    d="M227.112 76.8C229 74.912 231.304 73.968 234.024 73.968C236.616 73.968 238.6 74.656 239.976 76.032C241.352 77.376 242.04 79.488 242.04 82.368C242.04 83.712 241.816 84.992 241.368 86.208C240.92 87.424 240.36 88.608 239.688 89.76C239.016 90.88 238.28 92 237.48 93.12C236.68 94.24 235.912 95.392 235.176 96.576C234.44 97.728 233.8 98.944 233.256 100.224C232.712 101.472 232.376 102.816 232.248 104.256H242.712V108H227.832V107.088C227.832 104.944 228.072 103.04 228.552 101.376C229.064 99.712 229.672 98.208 230.376 96.864C231.112 95.52 231.912 94.272 232.776 93.12C233.64 91.968 234.424 90.848 235.128 89.76C235.864 88.64 236.472 87.504 236.952 86.352C237.464 85.168 237.72 83.872 237.72 82.464C237.72 80.768 237.384 79.552 236.712 78.816C236.04 78.048 235.032 77.664 233.688 77.664C232.76 77.664 231.912 77.856 231.144 78.24C230.408 78.592 229.736 79.056 229.128 79.632L227.112 76.8ZM247.689 91.872H254.169V84.96H257.721V91.872H264.201V95.376H257.721V102.336H254.169V95.376H247.689V91.872ZM278.586 90.096C280.186 90.672 281.418 91.696 282.282 93.168C283.178 94.608 283.626 96.48 283.626 98.784C283.626 101.856 282.874 104.288 281.37 106.08C279.898 107.84 277.658 108.72 274.65 108.72C273.466 108.72 272.314 108.544 271.194 108.192C270.074 107.84 269.098 107.376 268.266 106.8L269.37 103.44C270.106 103.888 270.874 104.272 271.674 104.592C272.506 104.912 273.37 105.072 274.266 105.072C275.898 105.072 277.162 104.576 278.058 103.584C278.986 102.56 279.45 100.944 279.45 98.736C279.45 96.528 278.938 94.864 277.914 93.744C276.922 92.624 275.322 92.064 273.114 92.064H271.866V88.56H272.922C274.842 88.56 276.266 88.048 277.194 87.024C278.122 86 278.586 84.576 278.586 82.752C278.586 81.024 278.218 79.744 277.482 78.912C276.746 78.048 275.77 77.616 274.554 77.616C273.722 77.616 272.922 77.776 272.154 78.096C271.418 78.416 270.778 78.816 270.234 79.296L268.602 76.272C269.434 75.504 270.41 74.928 271.53 74.544C272.682 74.16 273.818 73.968 274.938 73.968C277.434 73.968 279.354 74.752 280.698 76.32C282.042 77.888 282.714 79.968 282.714 82.56C282.714 84.384 282.346 85.936 281.61 87.216C280.906 88.464 279.898 89.424 278.586 90.096Z"
+                    fill="#353535" />
+            </a>
+            <!-- END MATH -->
+
+            <path
+                d="M412.258 20.0698C407.069 20.0698 406.625 23.8961 406.553 28.5295C406.54 29.3308 405.891 29.9767 405.09 29.9767C404.275 29.9767 403.615 29.3093 403.628 28.4942C403.719 22.8856 404.15 17 411.84 17C419.434 17 420.141 22.6991 420.205 28.5116C420.214 29.3207 419.556 29.9767 418.747 29.9767C417.937 29.9767 417.284 29.3207 417.277 28.5116C417.238 23.854 416.812 20.0698 412.258 20.0698Z"
+                fill="#999999" />
+            <path
+                d="M400 31.7907C400 29.9412 401.499 28.4419 403.349 28.4419H419.953C422.188 28.4419 424 30.2536 424 32.4884V37.5117C424 42.5208 419.939 46.5814 414.93 46.5814H409.07C404.061 46.5814 400 42.5208 400 37.5117V31.7907Z"
+                fill="#E68833" />
+            <circle cx="411.86" cy="36.1163" r="4.04651" fill="#393939" />
+            <rect x="409.767" y="37.093" width="4.46512" height="7.53488" fill="#393939" />
+            <path
+                d="M411.258 143.07C406.069 143.07 405.625 146.896 405.553 151.529C405.54 152.331 404.891 152.977 404.09 152.977C403.275 152.977 402.615 152.309 402.628 151.494C402.719 145.886 403.15 140 410.84 140C418.434 140 419.141 145.699 419.205 151.512C419.214 152.321 418.556 152.977 417.747 152.977C416.937 152.977 416.284 152.321 416.277 151.512C416.238 146.854 415.812 143.07 411.258 143.07Z"
+                fill="#999999" />
+            <path
+                d="M399 154.791C399 152.941 400.499 151.442 402.349 151.442H418.953C421.188 151.442 423 153.254 423 155.488V160.512C423 165.521 418.939 169.581 413.93 169.581H408.07C403.061 169.581 399 165.521 399 160.512V154.791Z"
+                fill="#E68833" />
+            <circle cx="410.86" cy="159.116" r="4.04651" fill="#393939" />
+            <rect x="408.767" y="160.093" width="4.46512" height="7.53488" fill="#393939" />
+            <path
+                d="M412.258 266.07C407.069 266.07 406.625 269.896 406.553 274.529C406.54 275.331 405.891 275.977 405.09 275.977C404.275 275.977 403.615 275.309 403.628 274.494C403.719 268.886 404.15 263 411.84 263C419.434 263 420.141 268.699 420.205 274.512C420.214 275.321 419.556 275.977 418.747 275.977C417.937 275.977 417.284 275.321 417.277 274.512C417.238 269.854 416.812 266.07 412.258 266.07Z"
+                fill="#999999" />
+            <path
+                d="M400 277.791C400 275.941 401.499 274.442 403.349 274.442H419.953C422.188 274.442 424 276.254 424 278.488V283.512C424 288.521 419.939 292.581 414.93 292.581H409.07C404.061 292.581 400 288.521 400 283.512V277.791Z"
+                fill="#E68833" />
+            <circle cx="411.86" cy="282.116" r="4.04651" fill="#393939" />
+            <rect x="409.767" y="283.093" width="4.46512" height="7.53488" fill="#393939" />
+            <path
+                d="M647.258 266.07C642.069 266.07 641.625 269.896 641.553 274.529C641.54 275.331 640.891 275.977 640.09 275.977C639.275 275.977 638.615 275.309 638.628 274.494C638.719 268.886 639.15 263 646.84 263C654.434 263 655.141 268.699 655.205 274.512C655.214 275.321 654.556 275.977 653.747 275.977C652.937 275.977 652.284 275.321 652.277 274.512C652.238 269.854 651.812 266.07 647.258 266.07Z"
+                fill="#999999" />
+            <path
+                d="M635 277.791C635 275.941 636.499 274.442 638.349 274.442H654.953C657.188 274.442 659 276.254 659 278.488V283.512C659 288.521 654.939 292.581 649.93 292.581H644.07C639.061 292.581 635 288.521 635 283.512V277.791Z"
+                fill="#E68833" />
+            <circle cx="646.86" cy="282.116" r="4.04651" fill="#393939" />
+            <rect x="644.767" y="283.093" width="4.46512" height="7.53488" fill="#393939" />
+            <path
+                d="M568.258 357.07C563.069 357.07 562.625 360.896 562.553 365.529C562.54 366.331 561.891 366.977 561.09 366.977C560.275 366.977 559.615 366.309 559.628 365.494C559.719 359.886 560.15 354 567.84 354C575.434 354 576.141 359.699 576.205 365.512C576.214 366.321 575.556 366.977 574.747 366.977C573.937 366.977 573.284 366.321 573.277 365.512C573.238 360.854 572.812 357.07 568.258 357.07Z"
+                fill="#999999" />
+            <path
+                d="M556 368.791C556 366.941 557.499 365.442 559.349 365.442H575.953C578.188 365.442 580 367.254 580 369.488V374.512C580 379.521 575.939 383.581 570.93 383.581H565.07C560.061 383.581 556 379.521 556 374.512V368.791Z"
+                fill="#E68833" />
+            <circle cx="567.86" cy="373.116" r="4.04651" fill="#393939" />
+            <rect x="565.767" y="374.093" width="4.46512" height="7.53488" fill="#393939" />
+            <rect x="34" y="73.1038" width="6.78441" height="25" transform="rotate(-35.5253 34 73.1038)"
+                fill="#4A4A4A" />
+            <rect x="34" y="73.1038" width="6.78441" height="25" transform="rotate(-35.5253 34 73.1038)"
+                fill="#4A4A4A" />
+            <rect x="55" y="101.942" width="6.78441" height="25" transform="rotate(-35.5253 55 101.942)"
+                fill="#4A4A4A" />
+            <rect x="55" y="101.942" width="6.78441" height="25" transform="rotate(-35.5253 55 101.942)"
+                fill="#4A4A4A" />
+            <rect x="408.067" y="63" width="6.78441" height="25" transform="rotate(0.154081 408.067 63)"
+                fill="#4A4A4A" />
+            <rect x="408.067" y="63" width="6.78441" height="25" transform="rotate(0.154081 408.067 63)"
+                fill="#4A4A4A" />
+            <rect x="408.305" y="98.6733" width="6.78441" height="25" transform="rotate(0.154081 408.305 98.6733)"
+                fill="#4A4A4A" />
+            <rect x="408.305" y="98.6733" width="6.78441" height="25" transform="rotate(0.154081 408.305 98.6733)"
+                fill="#4A4A4A" />
+            <rect x="408.067" y="186" width="6.78441" height="25" transform="rotate(0.154081 408.067 186)"
+                fill="#4A4A4A" />
+            <rect x="408.067" y="186" width="6.78441" height="25" transform="rotate(0.154081 408.067 186)"
+                fill="#4A4A4A" />
+            <rect x="408.305" y="221.673" width="6.78441" height="25" transform="rotate(0.154081 408.305 221.673)"
+                fill="#4A4A4A" />
+            <rect x="408.305" y="221.673" width="6.78441" height="25" transform="rotate(0.154081 408.305 221.673)"
+                fill="#4A4A4A" />
+            <rect x="626.849" y="301" width="6.78441" height="25" transform="rotate(36.533 626.849 301)"
+                fill="#4A4A4A" />
+            <rect x="626.849" y="301" width="6.78441" height="25" transform="rotate(36.533 626.849 301)"
+                fill="#4A4A4A" />
+            <rect x="605.882" y="329.863" width="6.78441" height="25" transform="rotate(36.533 605.882 329.863)"
+                fill="#4A4A4A" />
+            <rect x="605.882" y="329.863" width="6.78441" height="25" transform="rotate(36.533 605.882 329.863)"
+                fill="#4A4A4A" />
+            <rect x="343.519" y="52.5837" width="6.78441" height="25" transform="rotate(67.5262 343.519 52.5837)"
+                fill="#4A4A4A" />
+            <rect x="343.519" y="52.5837" width="6.78441" height="25" transform="rotate(67.5262 343.519 52.5837)"
+                fill="#4A4A4A" />
+            <rect x="376.632" y="39.2324" width="6.78441" height="25" transform="rotate(67.5262 376.632 39.2324)"
+                fill="#4A4A4A" />
+            <rect x="376.632" y="39.2324" width="6.78441" height="25" transform="rotate(67.5262 376.632 39.2324)"
+                fill="#4A4A4A" />
+            <rect x="310.683" y="66.5291" width="6.78441" height="25" transform="rotate(67.5262 310.683 66.5291)"
+                fill="#4A4A4A" />
+            <rect x="310.683" y="66.5291" width="6.78441" height="25" transform="rotate(67.5262 310.683 66.5291)"
+                fill="#4A4A4A" />
+            <rect x="501.694" y="328.892" width="6.78441" height="25" transform="rotate(123.144 501.694 328.892)"
+                fill="#4A4A4A" />
+            <rect x="501.694" y="328.892" width="6.78441" height="25" transform="rotate(123.144 501.694 328.892)"
+                fill="#4A4A4A" />
+            <rect x="531.412" y="348.68" width="6.78441" height="25" transform="rotate(123.144 531.412 348.68)"
+                fill="#4A4A4A" />
+            <rect x="531.412" y="348.68" width="6.78441" height="25" transform="rotate(123.144 531.412 348.68)"
+                fill="#4A4A4A" />
+            <rect x="471.642" y="309.668" width="6.78441" height="25" transform="rotate(123.144 471.642 309.668)"
+                fill="#4A4A4A" />
+            <rect x="471.642" y="309.668" width="6.78441" height="25" transform="rotate(123.144 471.642 309.668)"
+                fill="#4A4A4A" />
+            <rect x="189.54" y="116.61" width="6.78441" height="25" transform="rotate(67.6762 189.54 116.61)"
+                fill="#4A4A4A" />
+            <rect x="189.54" y="116.61" width="6.78441" height="25" transform="rotate(67.6762 189.54 116.61)"
+                fill="#4A4A4A" />
+            <rect x="222.688" y="103.346" width="6.78441" height="25" transform="rotate(67.6762 222.688 103.346)"
+                fill="#4A4A4A" />
+            <rect x="222.688" y="103.346" width="6.78441" height="25" transform="rotate(67.6762 222.688 103.346)"
+                fill="#4A4A4A" />
+            <rect x="156.668" y="130.469" width="6.78441" height="25" transform="rotate(67.6762 156.668 130.469)"
+                fill="#4A4A4A" />
+            <rect x="156.668" y="130.469" width="6.78441" height="25" transform="rotate(67.6762 156.668 130.469)"
+                fill="#4A4A4A" />
+
+        </svg>
+
+
+        <div class="start-stage-modal" id="animals-stage-modal" stage="animals">
+            <div>
+                <img src="img/animals/all_animals.svg" />
+            </div>
+            <div>
+                <p class="stage-description">Iniciar o jogo, fase dos animais.</p>
+            </div>
+            <div>
+                <button class="stage-modal-button stage-start-button" stage="animals">JOGAR</button>
+                <button class="stage-modal-button" id="stage-cancel-button">CANCELAR</button>
+            </div>
+        </div>
+
+        <div class="start-stage-modal" id="food-stage-modal" stage="food">
+            <div>
+                <img src="img/food/all_foods.svg" />
+            </div>
+            <div>
+                <p class="stage-description">Iniciar o jogo, fase dos alimentos.</p>
+            </div>
+            <div>
+                <button class="stage-modal-button stage-start-button" stage="food">JOGAR</button>
+                <button class="stage-modal-button" id="food-stage-cancel-button">CANCELAR</button>
+            </div>
+        </div>
+
+        <div class="start-stage-modal" id="math-stage-modal" stage="math">
+            <div>
+                <img src="img/math/all_operation.svg" />
+            </div>
+            <div>
+                <p class="stage-description">Iniciar o jogo, fase da matemática.</p>
+            </div>
+            <div>
+                <button class="stage-modal-button stage-start-button" stage="math">JOGAR</button>
+                <button class="stage-modal-button" id="math-stage-cancel-button">CANCELAR</button>
+            </div>
+        </div>
+
+        <div class="stage">
+
+            <div class="categories-section" id="animals-section">
+
+                <div class="drop-area" id="accept-snow" stage="animals">
+                    <img id="snow-habitat" src="img/snow_habitat.svg" />
+                    <div id="animals-snow">
+                        <img id="penguin-snow-habitat" class="animal-in-category"
+                            src="img/animals/animals_in_habitat/snow/penguin.svg" />
+                        <img id="polar_bear-snow-habitat" class="animal-in-category"
+                            src="img/animals/animals_in_habitat/snow/polar_bear.svg" />
+                        <img id="snow_owl-snow-habitat" class="animal-in-category"
+                            src="img/animals/animals_in_habitat/snow/snow_owl.svg" />
+                        <img id="snow_weasel-snow-habitat" class="animal-in-category"
+                            src="img/animals/animals_in_habitat/snow/snow_weasel.svg" />
+                    </div>
+                </div>
+
+                <div class="drop-area" id="accept-domestic" stage="animals">
+                    <img id="domestic-habitat" src="img/domestic_habitat.svg" />
+                    <div id="animals-domestic">
+                        <img id="cat-domestic-habitat" class="animal-in-category"
+                            src="img/animals/animals_in_habitat/domestic/cat.svg" />
+                        <img id="dog-domestic-habitat" class="animal-in-category"
+                            src="img/animals/animals_in_habitat/domestic/dog.svg" />
+                        <img id="fish-domestic-habitat" class="animal-in-category"
+                            src="img/animals/animals_in_habitat/domestic/fish.svg" />
+                        <img id="turtle-domestic-habitat" class="animal-in-category"
+                            src="img/animals/animals_in_habitat/domestic/turtle.svg" />
+                    </div>
+                </div>
+
+                <div class="drop-area" id="accept-jungle" stage="animals">
+                    <img id="jungle-habitat" src="img/bamboo_habitat.svg" />
+                    <div id="animals-jungle">
+                        <img id="koala-jungle-habitat" class="animal-in-category"
+                            src="img/animals/animals_in_habitat/jungle/koala.svg" />
+                        <img id="lemur-jungle-habitat" class="animal-in-category"
+                            src="img/animals/animals_in_habitat/jungle/lemur.svg" />
+                        <img id="panda-jungle-habitat" class="animal-in-category"
+                            src="img/animals/animals_in_habitat/jungle/panda.svg" />
+                        <img id="red_panda-jungle-habitat" class="animal-in-category"
+                            src="img/animals/animals_in_habitat/jungle/red_panda.svg" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="categories-section" id="food-section">
+
+                <div class="drop-area" id="accept-vegetable" stage="food">
+                    <img id="vegetable-food" src="img/food/vegetable_background.svg" />
+                    <div id="food-vegetable">
+                        <img id="cabbage-vegetable-habitat" class="food-in-category" src="img/food/cabbage.svg" />
+                        <img id="chard-vegetable-habitat" class="food-in-category" src="img/food/chard.svg" />
+                        <img id="spinach-vegetable-habitat" class="food-in-category" src="img/food/spinach.svg" />
+                        <img id="cress-vegetable-habitat" class="food-in-category" src="img/food/cress.svg" />
+                    </div>
+                </div>
+
+                <div class="drop-area" id="accept-fruit" stage="food">
+                    <img id="fruit-food" src="img/food/fruit_background.svg" />
+                    <div id="food-fruit">
+                        <img id="apple-fruit-habitat" class="food-in-category" src="img/food/apple.svg" />
+                        <img id="kiwi-fruit-habitat" class="food-in-category" src="img/food/kiwi.svg" />
+                        <img id="orange-fruit-habitat" class="food-in-category" src="img/food/orange.svg" />
+                        <img id="pear-fruit-habitat" class="food-in-category" src="img/food/pear.svg" />
+                    </div>
+                </div>
+
+                <div class="drop-area" id="accept-candy" stage="food">
+                    <img id="candy-food" src="img/food/candy_background.svg" />
+                    <div id="food-candy">
+                        <img id="candy_cane-candy-habitat" class="food-in-category" src="img/food/candy_cane.svg" />
+                        <img id="gum-candy-habitat" class="food-in-category" src="img/food/gum.svg" />
+                        <img id="ice_cream-candy-habitat" class="food-in-category" src="img/food/ice_cream.svg" />
+                        <img id="jelly_beans-candy-habitat" class="food-in-category" src="img/food/jelly_beans.svg" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="categories-section" id="math-section">
+
+                <div class="drop-area" id="accept-addition" stage="math">
+                    <img id="addition-math" src="img/math/board1.svg" />
+                    <div id="math-addition">
+                        <img id="eleven-addition-habitat" class="math-in-category" src="img/math/count_in_habitat/addition/eleven.svg" />
+                        <img id="twenty-addition-habitat" class="math-in-category" src="img/math/count_in_habitat/addition/twenty.svg" />
+                        <img id="two-addition-habitat" class="math-in-category" src="img/math/count_in_habitat/addition/two.svg" />
+                        <img id="fifteen-addition-habitat" class="math-in-category" src="img/math/count_in_habitat/addition/fifteen.svg" />
+                    </div>
+                </div>
+
+                <div class="drop-area" id="accept-subtraction" stage="math">
+                    <img id="subtraction-math" src="img/math/board2.svg" />
+                    <div id="math-subtraction">
+                        <img id="ten-subtraction-habitat" class="math-in-category" src="img/math/count_in_habitat/subtraction/ten.svg" />
+                        <img id="six-subtraction-habitat" class="math-in-category" src="img/math/count_in_habitat/subtraction/six.svg" />
+                        <img id="seven-subtraction-habitat" class="math-in-category" src="img/math/count_in_habitat/subtraction/seven.svg" />
+                        <img id="four-subtraction-habitat" class="math-in-category" src="img/math/count_in_habitat/subtraction/four.svg" />
+                    </div>
+                </div>
+
+                <div class="drop-area" id="accept-multiplication" stage="math">
+                    <img id="multiplication-math" src="img/math/board3.svg" />
+                    <div id="math-multiplication">
+                        <img id="eight-multiplication-habitat" class="math-in-category" src="img/math/count_in_habitat/multiplication/eight.svg" />
+                        <img id="nine-multiplication-habitat" class="math-in-category" src="img/math/count_in_habitat/multiplication/nine.svg" />
+                        <img id="forty-multiplication-habitat" class="math-in-category" src="img/math/count_in_habitat/multiplication/forty.svg" />
+                        <img id="one-multiplication-habitat" class="math-in-category" src="img/math/count_in_habitat/multiplication/one.svg" />
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="cards-section">
+
+                <div id="cards-section-line-1">
+                    <div class="card" id="card1"></div>
+                    <div class="card" id="card2"></div>
+                    <div class="card" id="card3"></div>
+                    <div class="card" id="card4"></div>
+                    <div class="card" id="card5"></div>
+                    <div class="card" id="card6"></div>
+                </div>
+
+                <div id="cards-section-line-2">
+                    <div class="card" id="card7"></div>
+                    <div class="card" id="card8"></div>
+                    <div class="card" id="card9"></div>
+                    <div class="card" id="card10"></div>
+                    <div class="card" id="card11"></div>
+                    <div class="card" id="card12"></div>
+
+                </div>
+
+
+            </div>
+
+            <div class="points-stage">
+                <img src="img/points.svg" class="points" />
+                <span class="input-points-value"></span>
+            </div>
+
+            <div class="coin-stage">
+                <img src="img/coin.svg" class="coin" />
+                <span class="input-coin-value"></span>
+            </div>
+
+            <div class="quit-stage">
+                <img src="img/quit_stage.svg" class="quit-stage-button" />
+            </div>
+
+            <div class="modal-quit-stage">
+                <div>
+                    <p>Certeza que deseja sair da partida?</p>
+                </div>
+                <div>
+                    <button class="stage-modal-button" id="confirm-quit-stage">CERTEZA</button>
+                    <button class="stage-modal-button" id="confirm-stay-stage">CANCELAR</button>
+                </div>
+            </div>
+
+            <div id="modal-complete-stage-animals" class="modal-complete-stage">
+                <div>
+                    <img src="img/animals/all_animals.svg" />
+                </div>
+                <div>
+                    <p class="stage-complete-description">PARABÉNS, VOCÊ FINALIZOU A FASE!</p>
+                </div>
+                <div>
+                    <button class="stage-modal-button end-complete-stage-button" id="end-complete-stage-animals" >CONTINUAR</button>
+                </div>
+          </div>
+            <div id="modal-complete-stage-food" class="modal-complete-stage">
+                <div>
+                    <img src="img/food/all_foods.svg" />
+                </div>
+                <div>
+                    <p class="stage-complete-description">PARABÉNS, VOCÊ FINALIZOU A FASE!</p>
+                </div>
+                <div>
+                    <button class="stage-modal-button end-complete-stage-button" id="end-complete-stage-food" >CONTINUAR</button>
+                </div>
+            </div>
+            <div id="modal-complete-stage-math" class="modal-complete-stage">
+                <div>
+                    <img src="img/math/all_operation.svg" />
+                </div>
+                <div>
+                    <p class="stage-complete-description">PARABÉNS, VOCÊ FINALIZOU A FASE!</p>
+                </div>
+                <div>
+                    <button class="stage-modal-button end-complete-stage-button" id="end-complete-stage-math" >CONTINUAR</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="store">
+
+        <div id="store-icons-button">
+            <img src="img/back_store_icon.svg" id="store-return-icon" />
+            <img src="img/coin.svg" class="coin" />
+            <span class="input-coin-value"></span>
+        </div>
+
+        <div id="store-items-section">
+            <div class="store-card">
+
+            </div>
+            <div class="store-card">
+
+            </div>
+            <div class="store-card">
+
+            </div>
+            <div class="store-card">
+
+            </div>
+            <div class="store-card">
+
+            </div>
+            <div class="store-card">
+
+            </div>
+            <div class="store-card">
+
+            </div>
+        </div>
+
+        <div id="store-category-section">
+
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+
+</body>
+
+</html>
